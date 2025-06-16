@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column; /* Changed to column to stack elements vertically */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -21,6 +22,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px #f7fafa;
             text-align: center;
+            margin-bottom: 30px; /* Added margin to separate from task section */
         }
 
         h1 {
@@ -70,6 +72,35 @@
         .buttons .reset-button:hover {
             background-color: #8acb8a;
         }
+
+        /* Styles for the new Task section */
+        .task-container {
+            background-color: #f6f9fa;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px #f7fafa;
+            text-align: center;
+        }
+
+        .task-container h1 { /* Targeting the h1 specifically within task-container */
+            margin-bottom: 20px;
+            font-size: 1.8em; /* Adjust font size if needed */
+        }
+
+        .task {
+            display: inline-block; /* Allows padding and margin to be applied better than inline */
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue for the link button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .task:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -83,9 +114,12 @@
         </div>
     </div>
 
+    <div class="task-container">
+        <h1>Select a Task</h1>
+        <a href="Task1.html" class="task">Task1 : To-do-list</a>
+    </div>
+
     <script>
-        // Placeholder JavaScript for timer functionality
-        // In a real application, you would implement the timer logic here.
         let timerInterval;
         let timeLeft = 25 * 60; // 25 minutes in seconds
 
@@ -126,11 +160,5 @@
         // Initial display
         updateTimeDisplay();
     </script>
-</body>
-</html>
-<h1>Select a Task</h1>
-<div class="task-container">
-    <a href="Task1.html" class="task">Task1 : To-do-list</a>
-</div>
 </body>
 </html>
